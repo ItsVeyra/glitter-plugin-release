@@ -30,7 +30,7 @@ It separates two decisions that are often forced together: **this is worth keepi
 1. 在 Obsidian 中正常启用GLitter插件，在Glitter设置页里**打开Glitter首页**或在Obsidian左侧功能区里找到默认启用的**✨**图标，进入插件首页。
 ![alt text](assets/images/image.png)
 2. 跟随插件**首次流程**，完成第一条灵感的创建。
-<video controls src="assets/videos/首次引导流程.mov" title="首次引导流程"></video>
+<video controls src="assets/videos/首次引导流程.mp4" title="首次引导"></video>
 
 #### 使用过程
 1. **灵感速记**：点击**灵感速记**，在窗口内输入对应内容后保存，则完成一条灵感的录入。
@@ -39,14 +39,14 @@ It separates two decisions that are often forced together: **this is worth keepi
     - **图片和视频**：附件内添加媒体文件（或粘贴剪切板内的图像），载入内容并保存后，对应媒体文件则保存在仓库的本地默认路径/Glitter/images。
     - 新建文件：默认灵感在插件内以卡片类型存在，但用户可在创建灵感时通过勾选”保存灵感并创建文件”来达到新建灵感的同时也新建一个笔记文件的目的。
     - **快捷键**：默认Mod(Command/Crtl)+Shift+J，可在设置页里更改。
-<video controls src="assets/videos/灵感速记.mov" title="Title"></video>
+<video controls src="assets/videos/灵感速记.mp4" title="灵感速记"></video>
 
 2. **池**：灵感分类功能，在首页以圆圈涟漪样式呈现，单击后可进入首页。
     - **新建池**：点击**新建池**，输入池分类名称及描述后保存，则完成一个灵感分类的建立；
     - 其它新建路径：灵感速记窗口里面的**切换池**可以新建池；
     - **池样式规则**：默认灵感数量最多的池位于界面中心；池中心的虚实描边虚实默认随机生成。
     - **池编辑**：鼠标停留在池上方3秒，则触发“池独立模式”，右侧按钮可依次进行**池名称编辑**、**池分类删除**；池首页内单击池名称和池描述，也可以触发原位内容更改。
-<video controls src="assets/videos/池.mov" title="Title"></video>
+<video controls src="assets/videos/池.mp4" title="池"></video>
 
 3. **灵感卡片**：内容保存后在对应池内生成属于这个灵感的卡片。
     - 卡片管理：卡片更多里可进行编辑、移动、删除、创建为文件/打开文件、查看插入正文位置的操作。
@@ -60,7 +60,7 @@ It separates two decisions that are often forced together: **this is worth keepi
 4. **片段插入**：写笔记时，可以把已有灵感插入正文，方便引用、延展和继续写作。
     - 笔记正文内右键找到Glitter，选择**插入灵感片段**；
     - 快捷键：Mod(Command/Ctrl)+Shift+I。
-<video controls src="assets/videos/片段引用.mov" title="Title"></video>
+<video controls src="assets/videos/片段引用.mp4" title="灵感片段引用"></video>
 
 5. 其他
     - 首页“切换视图”为占位信息，后续会开发首页灵感池多视图切换功能。
