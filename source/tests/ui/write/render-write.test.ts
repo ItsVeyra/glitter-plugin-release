@@ -261,11 +261,7 @@ describe("renderWriteView", () => {
       "background: color-mix(in srgb, var(--glitter-ui-bg-alt) 78%, transparent);",
       "box-shadow: none;"
     ]);
-    expectDeclarationsInSelectorBlock(stylesCss, ".glitter-write-stage--quick-capture .glitter-write-stage__close-button", [
-      "border: none;",
-      "background: color-mix(in srgb, var(--glitter-ui-bg-alt) 88%, transparent);",
-      "box-shadow: none;"
-    ]);
+    expect(stylesCss).not.toContain(".glitter-write-stage--quick-capture .glitter-write-stage__close-button {");
     expect(stylesCss).toContain(
       ".glitter-write-stage--quick-capture .glitter-write-stage__auto-title:focus-within {\n  outline: 1px solid color-mix(in srgb, var(--glitter-ui-border-strong) 72%, transparent);"
     );
@@ -679,9 +675,7 @@ describe("renderWriteView", () => {
         "box-shadow: none;"
       ]
     );
-    expect(stylesCss).toContain(
-      ".glitter-quick-capture-modal .modal-close-button,\n.glitter-pool-modal .modal-close-button,\n.GlitterIdea-edit-modal .modal-close-button,\n.GlitterIdea-picker-modal .modal-close-button,\n.glitter-snippet-locations-modal .modal-close-button,\n.glitter-pool-roam-history-modal .modal-close-button,\n.glitter-pool-roam-board-modal .modal-close-button {\n  display: none;\n}"
-    );
+    expect(stylesCss).not.toContain("body.glitter-quick-capture-modal-open .modal-close-button");
   });
   it("renders first-use quick capture modal shell and Chinese copy", () => {
     const container = createContainer();
@@ -734,6 +728,7 @@ describe("renderWriteView", () => {
     expect(container.querySelector(".glitter-write-stage__pool-button-text")?.textContent).toContain("池：默认池");
     expect(poolButton?.disabled).toBe(true);
     expect(poolButton?.getAttribute("aria-disabled")).toBe("true");
+    expect(container.querySelector(".glitter-write-stage__close-button")).toBeNull();
     expect(container.querySelector(".glitter-write-stage__shortcut-hint")?.textContent).toContain(
       "Cmd/Ctrl+Enter"
     );
@@ -854,7 +849,7 @@ describe("renderWriteView", () => {
       | null;
     const submitTooltip = container.querySelector(".glitter-write-stage__submit-tooltip");
 
-    expect(closeButton?.getAttribute("aria-label")).toBe("Close quick capture");
+    expect(closeButton).toBeNull();
     expect(previewTrigger?.getAttribute("aria-label")).toBe("View large preview");
     expect(previousButton?.getAttribute("aria-label")).toBe("Previous image");
     expect(nextButton?.getAttribute("aria-label")).toBe("Next image");
@@ -2683,33 +2678,6 @@ describe("renderWriteView", () => {
     expect(selectedOptions).toHaveLength(0);
   });
 
-  it("adds accessible labels for icon-only quick-capture close button", () => {
-    const container = createContainer();
-
-    renderWriteView(container, buildWriteViewState("quick-capture-default"), {
-      onClose() {},
-      onSubmit() {},
-      onPoolPickerToggle() {},
-      onRetryLinkImport() {}
-    });
-
-    const closeButton = container.querySelector(".glitter-write-stage__close-button") as
-      | (HTMLElement & { getAttribute: (name: string) => string | null })
-      | null;
-
-    expect(closeButton?.getAttribute("aria-label")).toBe("关闭快速记录");
-    expect(container.querySelector(".glitter-write-stage__keyboard-button")).toBeNull();
-    expect(stylesCss).toContain(".glitter-write-stage__close-button {");
-    expect(stylesCss).toContain("box-shadow: none;");
-    expect(stylesCss).toContain("background-color: currentColor;");
-    expect(stylesCss).toContain("-webkit-mask-image: url(\"data:image/svg+xml");
-    expect(stylesCss).not.toContain("stroke='%23B8C7E3'");
-    expect(stylesCss).not.toContain("stroke='%238FA0D1'");
-    expect(stylesCss).not.toContain("stroke='%239fb1d4'");
-    expect(stylesCss).not.toContain("stroke='%23DFE9FF'");
-    expect(stylesCss).not.toContain("stroke='%23141A26'");
-    expect(stylesCss).not.toContain("stroke='%2397ADD8'");
-  });
 
   it("shows collapsed chevron when pool dropdown is closed", () => {
     const container = createContainer();

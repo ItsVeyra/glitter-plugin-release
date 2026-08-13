@@ -3146,7 +3146,6 @@
   display: none;
 }
 
-.glitter-quick-capture-modal .modal-close-button,
 .glitter-pool-modal .modal-close-button,
 .GlitterIdea-edit-modal .modal-close-button,
 .GlitterIdea-picker-modal .modal-close-button,
@@ -5640,12 +5639,6 @@ button.glitter-write-stage__media-preview-close {
 
 .glitter-write-stage__pool-option {
   display: flex;
-}
-
-.glitter-write-stage--quick-capture .glitter-write-stage__close-button {
-  border: none;
-  background: color-mix(in srgb, var(--glitter-ui-bg-alt) 88%, transparent);
-  box-shadow: none;
 }
 
 .glitter-write-stage--quick-capture .glitter-write-stage__content-preview,

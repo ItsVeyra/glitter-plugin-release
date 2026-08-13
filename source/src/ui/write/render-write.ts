@@ -516,9 +516,6 @@ function renderQuickCaptureCapture(
 
   const header = createNode(card, "header", "glitter-write-stage__modal-header");
   createNode(header, "h2", "glitter-write-stage__title", state.title);
-  const closeButton = createButton(header, "glitter-write-stage__close-button", "", () => actions.onClose());
-  closeButton.setAttribute("aria-label", state.quickCapture?.labels?.closeQuickCapture ?? "关闭快速记录");
-  createNode(closeButton, "span", "glitter-write-stage__icon glitter-write-stage__icon--close");
 
   const contentKind = state.contentKind ?? "text";
   const autoTitle = createNode(card, "label", "glitter-write-stage__auto-title");

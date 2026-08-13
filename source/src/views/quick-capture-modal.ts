@@ -1573,6 +1573,7 @@ export class QuickCaptureModal extends Modal {
         ...this.runtimeState,
         input: resolvedState.nextInput
       };
+
       this.renderCurrentState();
 
       if (imported.mediaCandidates.length > 0 && this.captureEntryMode !== "link") {
